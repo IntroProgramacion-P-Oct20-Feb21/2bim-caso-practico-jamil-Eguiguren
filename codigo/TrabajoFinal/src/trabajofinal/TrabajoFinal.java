@@ -43,27 +43,34 @@ public class TrabajoFinal {
                 case 1:
                     facebbok = crearFacebook();
                     System.out.println(facebbok);
+                    contador = contador + 1;
                     break;
                 case 2:
                     crearTwitter();
+                    contador = contador + 1;
                     break;
                 case 3:
                     whatsapp = crearWhatsapp();
                     System.out.println(whatsapp);
+                    contador = contador + 1;
                     break;
                 case 4:                 
                     crearTelegram();
+                    contador = contador + 1;
                     break;
                 case 5:
                     signal = crearSignal();
                     System.out.println(signal);
+                    contador = contador + 1;
                     break;
                 case 6:
                     crearInstagram();
+                    contador = contador + 1;
                     break;
                 case 7:
                     flickr = crearFlickr();
                     System.out.println(flickr);
+                    contador = contador + 1;
                     break;
                 default:
                     System.out.println("Error, intete colocar los numero presentados");
@@ -73,15 +80,10 @@ public class TrabajoFinal {
             System.out.println("Ingrese si para seguir creando cuentas: \n"
                     + "Ingrese no para dejar de crear cuentas: \n");
             opcion2 = entrada.nextLine();
-            if (opcion2.equals ("si")) {
-                contador = contador + 1;
-            } else {
                 if (opcion2.equals ("no")) {
                     bandera = false;
                     cadena = obtenerMensaje(contador);
-                    System.out.println(cadena);
-                }
-                        
+                    System.out.println(cadena);                                      
             }
         } while (bandera);
     }
@@ -264,18 +266,18 @@ public class TrabajoFinal {
         String[] mensajeFinal = {"Campaña con poca afluencia",
             "Campaña moderada siga adelante", "Excelente campaña"};
         String cadena = "";
-        if ((contador >= 1) || (contador <= 5)) {
+        if ((contador >= 1) && (contador <= 5)) {
             cadena = (mensajeFinal[0]);
         } else {
-            if ((contador >= 6) || (contador <= 15)) {
+            if ((contador >= 6) && (contador <= 15)) {
                 cadena = (mensajeFinal[1]);
             } else {
-                if (contador <= 16) {
+                if (contador >= 16) {
                     cadena = (mensajeFinal[2]);
                 }
 
             }
-
+        
         }
         return cadena;
     }
